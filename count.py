@@ -4,7 +4,7 @@ import os
 # this seems to be working, the only issues are it double counts if the changes are on two branches and not in master
 
 USERNAME = "kelseyalderman@gmail.com"
-REPOS = ["STIO", "GMI-PlanGrid", "MonoRepo", "AquaParks"]
+REPOS = ["STIO", "GMI-PlanGrid", "MonoRepo", "AquaParks", "LOC-Counter"]
 DAYS = 10
 IGNORE = ["package-lock.json"]
 ACCOUNT_OVERRIDES = {
