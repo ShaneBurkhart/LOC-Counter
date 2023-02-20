@@ -57,6 +57,7 @@ for repo in REPOS:
 
     os.chdir("..")
 
+print("")
 
 for repo in REPOS:
     os.chdir(repo)
@@ -108,7 +109,8 @@ for repo in REPOS:
                         try:
                             # any line added is counted, if we delete more than we add, we count the difference
                             # this is because line edits are counted as a delete and an add
-                            total += int(added) + max(int(deleted) - int(added), 0)
+                            # total += int(added) + max(int(deleted) - int(added), 0)
+                            total += int(added) - int(deleted)
                         except ValueError:
                             continue
                 
