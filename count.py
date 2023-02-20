@@ -4,11 +4,11 @@ import os
 # this seems to be working, the only issues are it double counts if the changes are on two branches and not in master
 
 USERNAME = "ShaneBurkhart"
-REPOS = ["STIO", "GMI-PlanGrid", "MonoRepo", "AquaParks", "LOC-Counter"]
+REPOS = ["MonoRepo", "LOC-Counter"]
 DAYS = 10
 IGNORE = ["package-lock.json"]
 ACCOUNT_OVERRIDES = {
-    "MonoRepo": "MonoRepoProject",
+    # "RepoName": "DifferentAccount",
 }
 
 # Set up the date range for the last 7 days
