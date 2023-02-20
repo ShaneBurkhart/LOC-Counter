@@ -1,5 +1,6 @@
 import datetime
 import os
+import datetime
 
 # this seems to be working, the only issues are it double counts if the changes are on two branches and not in master
 
@@ -8,14 +9,26 @@ REPOS = ["STIO", "GMI-PlanGrid", "MonoRepo", "AquaParks", "LOC-Counter"]
 DAYS = 10
 IGNORE = ["package-lock.json"]
 ACCOUNT_OVERRIDES = {
-    "MonoRepo": "MonoRepoProject",
+    # "MonoRepo": "MonoRepoProject",
 }
 
 # Set up the date range for the last 7 days
-today = datetime.datetime.now().date()
-start_date = today - datetime.timedelta(days=DAYS)
+# Create timezone object for Central Time Chicago
+CST = datetime.timezone(datetime.timedelta(hours=-6), 'Central Standard Time')
+
+# Get current date in CST
+now = datetime.datetime.now(CST)
+today = now.date()
+
+# Calculate start and end dates
+DAYS = 7
+start_date = today - datetime.timedelta(days=DAYS-1)
 dates = [start_date + datetime.timedelta(days=i) for i in range(DAYS)]
-date_ranges = [(datetime.datetime.combine(d, datetime.time.min), datetime.datetime.combine(d, datetime.time.max)) for d in dates]
+
+# Create date ranges in CST
+date_ranges = [(datetime.datetime.combine(d, datetime.time.min, tzinfo=CST).astimezone(CST),
+                datetime.datetime.combine(d, datetime.time.max, tzinfo=CST).astimezone(CST)) for d in dates]
+
 
 outputs = []
 
