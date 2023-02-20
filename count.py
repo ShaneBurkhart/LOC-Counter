@@ -4,8 +4,8 @@ import datetime
 
 # this seems to be working, the only issues are it double counts if the changes are on two branches and not in master
 
-USERNAME = "ShaneBurkhart"
-REPOS = ["MonoRepo", "LOC-Counter"]
+USERNAME = "shaneburkhart@gmail.com"
+REPOS = ["MonoRepo", "GMI-PlanGrid", "STIO", "AquaParks", "LOC-Counter"]
 DAYS = 10
 IGNORE = ["package-lock.json"]
 ACCOUNT_OVERRIDES = {
